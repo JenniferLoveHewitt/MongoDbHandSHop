@@ -1,0 +1,40 @@
+﻿@model MongoDbMarket.Domain.Item
+@using MongoDbMarket.Domain.Identity
+
+@{
+    Layout = "~/Views/StandartPage.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.LabelFor(x => x.Title)
+            <br />
+            @Html.TextBoxFor(x => x.Title)
+
+            <br /><br />
+            @Html.LabelFor(x => x.Price)
+            <br />
+            @Html.TextBoxFor(x => x.Price)
+
+            <br /><br />
+            @Html.LabelFor(x => x.Description)
+            <br />
+            @Html.TextBoxFor(x => x.Description)
+
+            @Html.Hidden("User", ViewData["User"])
+
+            <br /><br />
+            <input type="submit" value="Сохранить" />
+        }
+    </div>
+</body>
+</html>

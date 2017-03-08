@@ -1,0 +1,45 @@
+﻿@model MongoDbMarket.Domain.Item
+
+@{
+    Layout = "~/Views/StandartPage.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.HiddenFor(x => x.ItemId)
+            @Html.HiddenFor(x => x.User)
+
+            @Html.LabelFor(x => x.Title)
+            <br />
+            @Html.EditorFor(x => x.Title)
+
+            <br /><br />
+            @Html.LabelFor(x => x.Price)
+            <br />
+            @Html.EditorFor(x => x.Price)
+
+            <br /><br />
+            @Html.LabelFor(x => x.Description)
+            <br />
+            @Html.EditorFor(x => x.Description)
+
+            <br /><br />
+            @Html.LabelFor(x => x.Availability)
+            <br />
+            @Html.EditorFor(x => x.Availability)
+
+            <br /><br />
+            <input type = "submit" value = "Сохранить" />
+        }
+    </div>
+</body>
+</html>

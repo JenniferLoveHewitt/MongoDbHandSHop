@@ -1,0 +1,59 @@
+﻿@model MongoDbMarket.Domain.ItemRepository
+
+@{
+    Layout = "~/Views/StandartPage.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @Html.ActionLink("Добавить запись", "Add")
+        <br /><br />
+
+        @using (Html.BeginForm("Index", "Home"))
+        {
+            @Html.LabelFor(x => x.Filter.Title)
+            <br />
+            @Html.TextBoxFor(x => x.Filter.Title)
+            <input type="submit" value="Поиск"/>
+        }
+
+        <br />
+        <table>
+            <tr>
+                <td>@Html.DisplayNameFor(x => x.Filter.Title)</td>
+                <td>@Html.DisplayNameFor(x => x.Filter.Description)</td>
+                <td>@Html.DisplayNameFor(x => x.Filter.Availability)</td>
+                <td>@Html.DisplayNameFor(x => x.Filter.Price)</td>
+                <td>@Html.DisplayNameFor(x => x.Filter.User.UserName)</td>
+                <td>@Html.DisplayNameFor(x => x.Filter.User.Id)</td>
+                <td>Опции</td>
+            </tr>
+
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <th>@Html.DisplayFor(x => item.Title)</th>
+                    <th>@Html.DisplayFor(x => item.Description)</th>
+                    <th>@Html.DisplayFor(x => item.Availability)</th>
+                    <th>@Html.DisplayFor(x => item.Price)</th>
+                    <th>@Html.DisplayFor(x => item.User.UserName)</th>
+                    <th>@Html.DisplayFor(x => item.User.Id)</th>
+                    <th>
+                        @Html.ActionLink("Детали", "Detail", new { id = item.ItemId }) | 
+                        @Html.ActionLink("Удалить", "Delete", new { id = item.ItemId }) | 
+                        @Html.ActionLink("Изменить", "Edit", new { id = item.ItemId })
+                    </th>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>
