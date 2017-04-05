@@ -1,0 +1,76 @@
+﻿@model MongoDbMarket.Domain.Identity.RegisterModel
+
+@{
+    Layout = "~/Views/StandartPage.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/style1.css" />
+    <title>Registration</title>
+</head>
+<body>
+    <div class="form-style-5">
+    @Html.ValidationSummary(false)
+        <fieldset>
+            <legend>
+                <span class="number">1</span> Регистрация
+            </legend>
+
+            @using (Html.BeginForm())
+            {
+                @Html.EditorFor(x => x.Name, new
+                {
+                    htmlAttributes =
+                        new { placeholder = Html.DisplayNameFor(n => n.Name) }
+                })
+
+                @Html.EditorFor(x => x.Email, new
+                {
+                    htmlAttributes =
+                        new { placeholder = Html.DisplayNameFor(n => n.Email) }
+                })
+
+                @Html.EditorFor(x => x.Password, new
+                {
+                    htmlAttributes =
+                        new { placeholder = Html.DisplayNameFor(n => n.Password) }
+                })
+
+                @Html.EditorFor(x => x.ConfirmPassword, new
+                {
+                    htmlAttributes =
+                        new { placeholder = Html.DisplayNameFor(n => n.ConfirmPassword) }
+                })
+
+                <legend>
+                    <span class="number">2</span>Дополнительная информация
+                </legend>
+
+                @Html.EditorFor(x => x.Country, new
+                {
+                    htmlAttributes =
+                        new { placeholder = Html.DisplayNameFor(n => n.Country) }
+                })
+
+                @Html.EditorFor(x => x.PhoneNumber, new
+                {
+                    htmlAttributes =
+                        new { placeholder = Html.DisplayNameFor(n => n.PhoneNumber) }
+                })
+
+                @Html.EditorFor(x => x.Skype, new
+                {
+                    htmlAttributes =
+                        new { placeholder = Html.DisplayNameFor(n => n.Skype) }
+                })
+
+                <input type="submit" value="Принять" />
+            }
+        </fieldset>
+    </div>
+</body>
+</html>

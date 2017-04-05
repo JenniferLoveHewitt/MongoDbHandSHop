@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDbMarket.Domain", "MongoDbMarket.Domain\MongoDbMarket.Domain.csproj", "{26122FD9-90C2-4244-9C73-336A84F64983}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDbMarket.WebUI", "MongoDbMarket.WebUI\MongoDbMarket.WebUI.csproj", "{693C9ADD-AA97-478A-A97A-D03D685E89BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDbMarket.Tests", "MongoDbMarket.Tests\MongoDbMarket.Tests.csproj", "{D6124607-0338-415D-A557-3ED5E2984761}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26122FD9-90C2-4244-9C73-336A84F64983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26122FD9-90C2-4244-9C73-336A84F64983}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26122FD9-90C2-4244-9C73-336A84F64983}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26122FD9-90C2-4244-9C73-336A84F64983}.Release|Any CPU.Build.0 = Release|Any CPU
+		{693C9ADD-AA97-478A-A97A-D03D685E89BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{693C9ADD-AA97-478A-A97A-D03D685E89BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{693C9ADD-AA97-478A-A97A-D03D685E89BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{693C9ADD-AA97-478A-A97A-D03D685E89BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6124607-0338-415D-A557-3ED5E2984761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6124607-0338-415D-A557-3ED5E2984761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6124607-0338-415D-A557-3ED5E2984761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6124607-0338-415D-A557-3ED5E2984761}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

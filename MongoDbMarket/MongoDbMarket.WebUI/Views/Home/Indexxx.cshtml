@@ -1,0 +1,23 @@
+﻿@model IEnumerable<MongoDB.Driver.GridFS.GridFSFileInfo>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Indexxx</title>
+</head>
+<body>
+    <div>
+        <p>sos</p>
+        @foreach (var item in Model)
+        {
+            <p>@item.Metadata.</p>
+        }
+    </div>
+</body>
+</html>

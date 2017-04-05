@@ -1,0 +1,9 @@
+C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Tests\bin\Debug\MongoDbMarket.Tests.dll
+C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Tests\bin\Debug\MongoDbMarket.Tests.pdb
+C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Tests\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Tests\obj\Debug\MongoDbMarket.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Tests\obj\Debug\MongoDbMarket.Tests.dll
+C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Tests\obj\Debug\MongoDbMarket.Tests.pdb
+C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Tests\bin\Debug\MongoDbMarket.Tests.dll.CodeAnalysisLog.xml
+C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Tests\bin\Debug\MongoDbMarket.Tests.dll.lastcodeanalysissucceeded

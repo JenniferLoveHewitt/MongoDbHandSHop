@@ -1,0 +1,130 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link rel="stylesheet" href="~/Content/footerStyle.css">
+</head>
+<body>
+    <div>
+        <header>
+            <nav role='navigation'>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li>
+                        <a href="#">Category1</a>
+                        <ul>
+                            <li><a href="">Subcategory1</a></li>
+                            <li><a href="">Subcategory2</a></li>
+                            <li><a href="">Subcategory3</a></li>
+                            <li><a href="">Subcategory4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Category2</a>
+                        <ul>
+                            <li><a href="">Subcategory1</a></li>
+                            <li><a href="">Subcategory2</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Category3</a>
+                        <ul>
+                            <li><a href="">Subcategory1</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+
+                    @if (User.Identity.Name != String.Empty)
+                    {
+                        <li>
+                            @Html.ActionLink(User.Identity.Name, "UserDetail", "Home")
+                            <ul>
+                                <li>@Html.ActionLink("LogOut", "LogOut", "Auth")</li>
+                                <li>@Html.ActionLink("Detail", "UserDetail", "Home")</li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li><a href="#">Log In</a></li>
+                    }
+                </ul>
+            </nav>
+            <div style="padding-bottom: 100px"></div>
+        </header>
+
+        @RenderBody()
+
+        <footer>
+            <div class="logo">
+                <img src="~/Image/logo.jpg" width="70" height="80">
+            </div>
+
+            <div class="upper">
+                <div class="social">
+                    <div class="descript">
+                        <p>Социальные сети</p>
+                    </div>
+                    <div class="vk">
+                        <img src="~/Image/social/iconmonstr-vk-5-240.png" alt="vk" width="40" height="40">
+                    </div>
+
+                    <div class="fb">
+                        <img src="~/Image/social/iconmonstr-facebook-5-240.png" alt="vk" width="40" height="40">
+                    </div>
+
+                    <div class="twitter">
+                        <img src="~/Image/social/iconmonstr-twitter-5-240.png" alt="vk" width="40" height="40">
+                    </div>
+
+                    <div class="insta">
+                        <img src="~/Image/social/iconmonstr-instagram-5-240.png" alt="vk" width="40" height="40">
+                    </div>
+                </div>
+
+                <div class=other>
+                    <div class=category>
+                        <ul>
+                            <li>Men</li>
+                            <li>Women</li>
+                            <li>Children</li>
+                            <li>Allopatia</li>
+                        </ul>
+                    </div>
+
+                    <div class=aboutContact>
+                        <ul>
+                            <li>About</li>
+                            <li>Contact</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="delivery">
+                    <div class="descript">
+                        <p>Рассылка</p>
+                    </div>
+
+                    <div class="text">
+                        <input type="text" placeholder="Введите email">
+                    </div>
+
+                    <div class="btn">
+                        <button>Подписаться</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="companyName">
+                <p>©HANDSHOP GROUP, 2017</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

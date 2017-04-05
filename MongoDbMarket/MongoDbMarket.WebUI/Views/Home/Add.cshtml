@@ -1,0 +1,84 @@
+﻿@model MongoDbMarket.Domain.Item
+@using MongoDbMarket.Domain.Identity
+
+@{
+    Layout = "~/Views/StandartPage.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/style.css" />
+    <title>Добавление товара</title>
+</head>
+<body>
+    <div class="addItem">
+        @using (Html.BeginForm("Add", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <fieldset>
+                <legend>Добавление объявления</legend>
+
+                @Html.LabelFor(x => x.Category)
+                @Html.EditorFor(x => x.Category, new
+                {
+                    htmlAttributes =
+                        new { placeholder = Html.DisplayNameFor(x => x.Category) }
+                })
+
+                @Html.LabelFor(x => x.City)
+                @Html.EditorFor(x => x.City, new
+                {
+                    htmlAttributes =
+                        new { placeholder = Html.DisplayNameFor(x => x.City) }
+                })
+
+                @Html.EditorFor(x => x.Metro, new
+                {
+                    htmlAttributes =
+                        new { placeholder = Html.DisplayNameFor(x => x.Metro) }
+                })
+
+                <label>Информация о товаре</label>
+                @Html.EditorFor(x => x.Title, new
+                {
+                    htmlAttributes =
+                        new { placeholder = Html.DisplayNameFor(x => x.Title) }
+                })
+
+                <textarea name="Description" placeholder="Описание товара" maxlength=2000>
+                </textarea>
+
+                @Html.EditorFor(x => x.Price, new
+                {
+                    htmlAttributes =
+                        new { placeholder = Html.DisplayNameFor(x => x.Price)}
+                })
+
+                @Html.LabelFor(x => x.Photos, "Загрузить изображение")
+
+                <div class="imageInfo">
+                    <input type="file" name="file1" class="upload"/>
+                    <input type="file" name="file2" class="upload" />
+                    <input type="file" name="file3" class="upload" />
+
+                    <h6>Добавленные фото:</h6>
+                    <div id="image-holder">
+                        <p>Пока здесь пусто</p>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <input type="submit" value="Разместить" />
+
+            <script src="https://code.jquery.com/jquery-3.1.1.min.js">
+            </script>
+
+            <script src="~/Scripts/uploadScript.js">
+            </script>
+        }
+    </div>
+</body>
+</html>
