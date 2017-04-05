@@ -7,6 +7,8 @@ using MongoDB.Bson.Serialization;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.GridFS;
+using MongoDB.Driver.Linq;
+using System.IO;
 
 namespace MongoDbMarket.Domain
 {
@@ -17,17 +19,29 @@ namespace MongoDbMarket.Domain
         private IMongoDatabase Database { get; set; }
         private IMongoCollection<Item> ItemCollection { get; set; }
         private ItemRepository Repository { get; set; }
+        private GridFSBucket GridFs { get; set; }
         public MarketRepository()
         {
             Client = new MongoClient(connectionString);
             Database = Client.GetDatabase("HandShopV3");
+            GridFs = new GridFSBucket(Database);
 
             ItemCollection = Database.GetCollection<Item>("Item");
         }
 
+        private String _imageId;
+
+        public String ImageId
+        {
+            get
+            {
+                return _imageId;
+            }
+        }
+
         public async Task<ItemRepository> GetItemRepository(ItemFilter filter)
         {
-            if(filter.Title == null)
+            if (filter.Title == null)
                 Repository = new ItemRepository
                 {
                     Items = await ItemCollection.Find(new BsonDocument()).ToListAsync(),
@@ -77,6 +91,57 @@ namespace MongoDbMarket.Domain
         public IMongoDatabase GetDatabase()
         {
             return Database;
+        }
+
+        public async Task UploadStream(Stream stream, String fileName)
+        {
+            _imageId = ObjectId.GenerateNewId().ToString();
+
+            await GridFs.UploadFromStreamAsync(fileName, stream, 
+                new GridFSUploadOptions
+            {
+                Metadata = new BsonDocument
+                    {
+                        { "FileID", ImageId }
+                    }
+            });
+        }
+
+        public async Task UploadBytes(Byte[] source, String fileName)
+        {
+            _imageId = ObjectId.GenerateNewId().ToString();
+
+            await GridFs.UploadFromBytesAsync(fileName, source, 
+                new GridFSUploadOptions
+            {
+                Metadata = new BsonDocument
+                    {
+                        { "FileID", ImageId }
+                    }
+            });
+        }
+
+        public String GetCurrentImageId()
+        {
+            return ImageId;
+        }
+
+        public async Task<IEnumerable<GridFSFileInfo>> GetImages(IEnumerable<String> ImagesId)
+        {
+            var imagesList = new List<GridFSFileInfo>();
+
+            foreach (var item in ImagesId)
+                imagesList.AddRange(await GridFs.Find(Builders<GridFSFileInfo>.
+                    Filter.Eq(x => x.Metadata["FileID"], item)).ToListAsync());
+
+            return imagesList;
+        }
+
+        public async Task<List<String>> GetImagesId(String Id)
+        {
+            var sItem = await ItemCollection.Find(Builders<Item>.Filter.Eq("ItemId", Id)).FirstOrDefaultAsync();
+
+            return sItem.Photos;
         }
     }
 }

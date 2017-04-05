@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using MongoDB.Driver;
+using MongoDB.Driver.GridFS;
+using MongoDB.Driver.Linq;
 using MongoDB.Bson;
 
 namespace MongoDbMarket.WebUI.Controllers
@@ -30,6 +32,18 @@ namespace MongoDbMarket.WebUI.Controllers
             }
         }
 
+        public async Task<ActionResult> Indexxx(String Id, List<String> ImagesId)
+        {
+            if (Id == null || Id == String.Empty)
+                return HttpNotFound();
+
+            ImagesId = await repository.GetImagesId(Id);
+
+            var images = await repository.GetImages(ImagesId);
+
+            return View(images);
+        }
+
         //
         //Home/index
         public async Task<ActionResult> Index(ItemFilter filter)
@@ -39,6 +53,7 @@ namespace MongoDbMarket.WebUI.Controllers
             else
                 return View(await repository.GetItemRepository());
         }
+
         //
         //Home/Detail
         public async Task<ActionResult> Detail(String Id)
@@ -64,12 +79,24 @@ namespace MongoDbMarket.WebUI.Controllers
         public async Task<ActionResult> Add(Item item)
         {
             var sUser = await IdentityContext.Users.Find(Builders<ApplicationUser>.
-                Filter.Eq("UserName", User.Identity.Name)).FirstAsync();
+                Filter.Eq("UserName", User.Identity.Name)).FirstAsync(); 
+            item.User = sUser;
 
-            //ViewData["Id"] = sUser.Id;
-            //ViewData["UserName"] = sUser.UserName;
-            //ViewData["Country"] = sUser.Country;
-            //ViewData["Password"] = sUser.PasswordHash;
+            var ImageIdList = new List<String>();
+
+            for (int i = 1; i <= 3; i++)
+            {
+                if (Request.Files["file" + i].FileName != null &&
+                Request.Files["file" + i].FileName != String.Empty)
+                {
+                    await repository.UploadStream(Request.Files["file" + i].InputStream,
+                        Request.Files["file" + i].FileName);
+
+                    ImageIdList.Add(repository.ImageId);
+                }
+            }
+
+            item.Photos = ImageIdList;
 
             await repository.AddItem(item);
             return RedirectToAction("Index");
@@ -95,9 +122,9 @@ namespace MongoDbMarket.WebUI.Controllers
             return RedirectToAction("Index");
         }
 
-        //добавить GET!!
+        //добавить POST!!
         //
-        // POST: /Home/Delete
+        // GET: /Home/Delete
         public async Task<ActionResult> Delete(String Id)
         {
             await repository.RemoveItem(Id);

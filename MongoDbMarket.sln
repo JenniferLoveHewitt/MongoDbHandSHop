@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDbMarket.Domain", "Mon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDbMarket.WebUI", "MongoDbMarket.WebUI\MongoDbMarket.WebUI.csproj", "{693C9ADD-AA97-478A-A97A-D03D685E89BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDbMarket.Tests", "MongoDbMarket.Tests\MongoDbMarket.Tests.csproj", "{D6124607-0338-415D-A557-3ED5E2984761}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{693C9ADD-AA97-478A-A97A-D03D685E89BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{693C9ADD-AA97-478A-A97A-D03D685E89BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{693C9ADD-AA97-478A-A97A-D03D685E89BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6124607-0338-415D-A557-3ED5E2984761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6124607-0338-415D-A557-3ED5E2984761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6124607-0338-415D-A557-3ED5E2984761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6124607-0338-415D-A557-3ED5E2984761}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

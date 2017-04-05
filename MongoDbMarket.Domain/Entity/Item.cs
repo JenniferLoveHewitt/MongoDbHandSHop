@@ -16,7 +16,7 @@ namespace MongoDbMarket.Domain
         [BsonId]
         public String ItemId { get; set; }
 
-        [Display(Name = "Наименование")]
+        [Display(Name = "Наименование товара")]
         public String Title { get; set; }
 
         [Display(Name = "Цена")]
@@ -25,7 +25,8 @@ namespace MongoDbMarket.Domain
         [Display(Name = "Описание")]
         public String Description { get; set; }
 
-        public Byte[] Photos { get; set; }
+        //ссылки на картинки в GridFS
+        public List<String> Photos { get; set; }
 
         //ссылка на пользователя
         public ApplicationUser User { get; set; }
@@ -33,8 +34,16 @@ namespace MongoDbMarket.Domain
         [Display(Name = "Наличие товара")]
         public Boolean Availability { get; set; }
 
+        [Display(Name = "Категория")]
         public String Category { get; set; }
 
+        [Display(Name = "Подкатегория")]
         public String Subcategory { get; set; }
+
+        [Display(Name = "Город")]
+        public String City { get; set; }
+
+        [Display(Name = "Метро")]
+        public String Metro { get; set; }
     }
 }

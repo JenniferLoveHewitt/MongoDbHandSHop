@@ -87,3 +87,12 @@ C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket
 C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.WebUI\bin\Microsoft.Owin.Host.SystemWeb.dll
 C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.WebUI\bin\Microsoft.Owin.Host.SystemWeb.xml
 C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.WebUI\bin\MongoDB.Driver.dll
+C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.WebUI\bin\MongoDB.Driver.GridFS.dll
+C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.WebUI\bin\MongoDB.Driver.GridFS.xml
+C:\Users\Finch\Documents\Visual Studio 2015\Projects\MongoDbMarket\MongoDbMarket.WebUI\bin\Antlr3.Runtime.dll
+C:\Users\Finch\Documents\Visual Studio 2015\Projects\MongoDbMarket\MongoDbMarket.WebUI\bin\System.Web.Optimization.dll
+C:\Users\Finch\Documents\Visual Studio 2015\Projects\MongoDbMarket\MongoDbMarket.WebUI\bin\WebGrease.dll
+C:\Users\Finch\Documents\Visual Studio 2015\Projects\MongoDbMarket\MongoDbMarket.WebUI\bin\Antlr3.Runtime.pdb
+C:\Users\Finch\Documents\Visual Studio 2015\Projects\MongoDbMarket\MongoDbMarket.WebUI\bin\System.Web.Optimization.xml
+C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.WebUI\bin\MongoDbMarket.WebUI.dll.CodeAnalysisLog.xml
+C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.WebUI\bin\MongoDbMarket.WebUI.dll.lastcodeanalysissucceeded

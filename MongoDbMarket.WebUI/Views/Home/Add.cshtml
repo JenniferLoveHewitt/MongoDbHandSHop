@@ -10,30 +10,74 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Add</title>
+    <link rel="stylesheet" href="~/Content/style.css" />
+    <title>Добавление товара</title>
 </head>
 <body>
-    <div>
-        @using (Html.BeginForm())
+    <div class="addItem">
+        @using (Html.BeginForm("Add", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-            @Html.LabelFor(x => x.Title)
-            <br />
-            @Html.TextBoxFor(x => x.Title)
+            <fieldset>
+                <legend>Добавление объявления</legend>
 
-            <br /><br />
-            @Html.LabelFor(x => x.Price)
-            <br />
-            @Html.TextBoxFor(x => x.Price)
+                @Html.LabelFor(x => x.Category)
+                @Html.EditorFor(x => x.Category, new
+                {
+                    htmlAttributes =
+                        new { placeholder = Html.DisplayNameFor(x => x.Category) }
+                })
 
-            <br /><br />
-            @Html.LabelFor(x => x.Description)
-            <br />
-            @Html.TextBoxFor(x => x.Description)
+                @Html.LabelFor(x => x.City)
+                @Html.EditorFor(x => x.City, new
+                {
+                    htmlAttributes =
+                        new { placeholder = Html.DisplayNameFor(x => x.City) }
+                })
 
-            @Html.Hidden("User", ViewData["User"])
+                @Html.EditorFor(x => x.Metro, new
+                {
+                    htmlAttributes =
+                        new { placeholder = Html.DisplayNameFor(x => x.Metro) }
+                })
 
-            <br /><br />
-            <input type="submit" value="Сохранить" />
+                <label>Информация о товаре</label>
+                @Html.EditorFor(x => x.Title, new
+                {
+                    htmlAttributes =
+                        new { placeholder = Html.DisplayNameFor(x => x.Title) }
+                })
+
+                <textarea name="Description" placeholder="Описание товара" maxlength=2000>
+                </textarea>
+
+                @Html.EditorFor(x => x.Price, new
+                {
+                    htmlAttributes =
+                        new { placeholder = Html.DisplayNameFor(x => x.Price)}
+                })
+
+                @Html.LabelFor(x => x.Photos, "Загрузить изображение")
+
+                <div class="imageInfo">
+                    <input type="file" name="file1" class="upload"/>
+                    <input type="file" name="file2" class="upload" />
+                    <input type="file" name="file3" class="upload" />
+
+                    <h6>Добавленные фото:</h6>
+                    <div id="image-holder">
+                        <p>Пока здесь пусто</p>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <input type="submit" value="Разместить" />
+
+            <script src="https://code.jquery.com/jquery-3.1.1.min.js">
+            </script>
+
+            <script src="~/Scripts/uploadScript.js">
+            </script>
         }
     </div>
 </body>
