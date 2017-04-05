@@ -89,14 +89,26 @@ header nav ul ul ul {
     top:0;
 }	
 
+#contentToFooter:after{
+    content: "";
+    display: block;
+}
+
+footer, #contentToFooter:after{
+    height: 440px;
+}
+
+#contentToFooter{
+    height: 94%;
+    margin-bottom: -10px; 
+}
+
 footer {
-    position: absolute;
     width: 100%;
     background: url("../Image/bcg2.jpg") no-repeat;
     background-size: 100%;
     color: white;
     font-size: 20px;
-    margin-top: 75px;
 }
 
 footer .logo{

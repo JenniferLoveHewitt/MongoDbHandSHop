@@ -8,7 +8,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title></title>
-    <link rel="stylesheet" href="~/Content/footerStyle.css">
+    <link rel="stylesheet" href="~/Content/footerStyle.css?v=@DateTime.Now.Millisecond">
 </head>
 <body>
     <div>
@@ -42,6 +42,7 @@
 
                     @if (User.Identity.Name != String.Empty)
                     {
+                        <li>@Html.ActionLink("Добавить товар", "Add", "Home")</li>
                         <li>
                             @Html.ActionLink(User.Identity.Name, "UserDetail", "Home")
                             <ul>
@@ -59,7 +60,9 @@
             <div style="padding-bottom: 100px"></div>
         </header>
 
-        @RenderBody()
+        <div id="contentToFooter">
+            @RenderBody()
+        </div>
 
         <footer>
             <div class="logo">

@@ -1,0 +1,103 @@
+﻿@model MongoDbMarket.Domain.ItemRepository
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/StandartPage.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <style>
+        body {
+            min-width: 1250px;
+        }
+    </style>
+    <div class="mainBlockList">
+        <div class="leftBlock">
+            <span>
+                <b>
+                    Категория 1
+                </b>
+            </span>
+
+            <ul class="dropdown">
+                <li>
+                    @Html.ActionLink("Подкатегория 1", "List")
+                </li>
+
+                <li>
+                    @Html.ActionLink("Подкатегория 2", "List")
+                </li>
+
+                <li>
+                    @Html.ActionLink("Подкатегория 3", "List")
+                </li>
+
+                <li>
+                    @Html.ActionLink("Подкатегория 4", "List")
+                </li>
+
+                <li>
+                    @Html.ActionLink("Подкатегория 5", "List")
+                </li>
+            </ul>
+
+            <span>
+                <b>
+                    Категория 2
+                </b>
+            </span>
+
+            <ul class="dropdown">
+                <li>
+                    @Html.ActionLink("Подкатегория 1", "List")
+                </li>
+
+                <li>
+                    @Html.ActionLink("Подкатегория 2", "List")
+                </li>
+
+                <li>
+                    @Html.ActionLink("Подкатегория 3", "List")
+                </li>
+
+                <li>
+                    @Html.ActionLink("Подкатегория 4", "List")
+                </li>
+
+                <li>
+                    @Html.ActionLink("Подкатегория 5", "List")
+                </li>
+            </ul>
+        </div>
+
+        <div class="centerBlock">
+            @foreach (var item in Model.Items)
+            {
+
+                <div class="itemBlock">
+                    <a href="@Url.Action("Detail", new { id = item.ItemId})">
+                        <img src="/Image/items/item7.jpg" width="230px" height="250px" />
+
+                        <h2>@item.Title</h2>
+                        <p>@item.Description</p>
+                        <h3>@item.Price</h3>
+                    </a>
+                </div>
+            }
+        </div>
+
+        <div class="rightBlock">
+            <img src="http://placehold.it/150x700" />
+        </div>
+
+    </div>
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/listScript.js"></script>
+</body>
+</html>
+

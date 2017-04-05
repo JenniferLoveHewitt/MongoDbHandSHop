@@ -221,12 +221,22 @@
     <Content Include="Content\style2.css" />
     <Content Include="Global.asax" />
     <Content Include="Image\bcg2.jpg" />
+    <Content Include="Image\iconmonstr-plus-4-240.png" />
+    <Content Include="Image\items\item1.jpg" />
+    <Content Include="Image\items\item2.jpg" />
+    <Content Include="Image\items\item3.jpg" />
+    <Content Include="Image\items\item4.jpg" />
+    <Content Include="Image\items\item5.jpg" />
+    <Content Include="Image\items\item6.jpg" />
+    <Content Include="Image\items\item7.jpg" />
+    <Content Include="Image\items\item8.jpg" />
     <Content Include="Image\logo.jpg" />
     <Content Include="Image\social\iconmonstr-facebook-5-240.png" />
     <Content Include="Image\social\iconmonstr-instagram-5-240.png" />
     <Content Include="Image\social\iconmonstr-twitter-5-240.png" />
     <Content Include="Image\social\iconmonstr-vk-5-240.png" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\listScript.js" />
     <Content Include="Scripts\uploadScript.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -260,6 +270,7 @@
     <Content Include="Views\Auth\Register.cshtml" />
     <Content Include="Views\StandartPage.cshtml" />
     <Content Include="Views\Home\Indexxx.cshtml" />
+    <Content Include="Views\Home\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

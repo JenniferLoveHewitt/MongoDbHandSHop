@@ -132,6 +132,16 @@ namespace MongoDbMarket.WebUI.Controllers
         }
 
         //
+        //Home/List
+        public async Task<ActionResult> List(ItemFilter filter)
+        {
+            if (filter != null)
+                return View(await repository.GetItemRepository(filter));
+            else
+                return View(await repository.GetItemRepository());
+        }
+
+        //
         //Home/UserDetail
         public ActionResult UserDetail()
         {

@@ -94,5 +94,3 @@ C:\Users\Finch\Documents\Visual Studio 2015\Projects\MongoDbMarket\MongoDbMarket
 C:\Users\Finch\Documents\Visual Studio 2015\Projects\MongoDbMarket\MongoDbMarket.WebUI\bin\WebGrease.dll
 C:\Users\Finch\Documents\Visual Studio 2015\Projects\MongoDbMarket\MongoDbMarket.WebUI\bin\Antlr3.Runtime.pdb
 C:\Users\Finch\Documents\Visual Studio 2015\Projects\MongoDbMarket\MongoDbMarket.WebUI\bin\System.Web.Optimization.xml
-C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.WebUI\bin\MongoDbMarket.WebUI.dll.CodeAnalysisLog.xml
-C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.WebUI\bin\MongoDbMarket.WebUI.dll.lastcodeanalysissucceeded

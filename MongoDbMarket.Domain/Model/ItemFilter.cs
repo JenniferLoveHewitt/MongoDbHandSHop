@@ -9,5 +9,6 @@ namespace MongoDbMarket.Domain
     public class ItemFilter
     {
         public String Title { get; set; }
+        public String Category { get; set; }
     }
 }
