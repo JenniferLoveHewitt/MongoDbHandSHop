@@ -219,6 +219,7 @@
     <Content Include="Content\style.css" />
     <Content Include="Content\style1.css" />
     <Content Include="Content\style2.css" />
+    <Content Include="Content\styleDetail.css" />
     <Content Include="Global.asax" />
     <Content Include="Image\bcg2.jpg" />
     <Content Include="Image\iconmonstr-plus-4-240.png" />
@@ -237,6 +238,7 @@
     <Content Include="Image\social\iconmonstr-vk-5-240.png" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\listScript.js" />
+    <Content Include="Scripts\scriptDetail.js" />
     <Content Include="Scripts\uploadScript.js" />
     <Content Include="Web.config" />
   </ItemGroup>

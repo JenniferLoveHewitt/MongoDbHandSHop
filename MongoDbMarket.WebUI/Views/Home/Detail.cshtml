@@ -10,10 +10,108 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Detail</title>
+    <link href="~/Content/styleDetail.css?v=@DateTime.Now.Millisecond" rel="stylesheet" />
 </head>
 <body>
-    <div>
-        @Html.DisplayForModel()
+    <style>
+        body {
+            min-width: 1500px;
+        }
+    </style>
+
+    <div class="mainBlockDetail">
+        <div mainDetail>
+            <div class="detailGellary">
+                <div class="detailGalleryUpper">
+                    <img src="/Image/items/item1.jpg" width="500px" height="550px">
+                </div>
+
+                <div class="detailGalleryBottom">
+                    <img src="/Image/items/item2.jpg" width="120px" height="120px">
+                    <img src="/Image/items/item3.jpg" width="120px" height="120px">
+                    <img src="/Image/items/item4.jpg" width="120px" height="120px">
+                    <img src="/Image/items/item1.jpg" width="120px" height="120px">
+                </div>
+            </div>
+
+            <div class="detailDescription">
+                <h1>@Model.Title</h1>
+                <h4>@Model.Category</h4>
+                <h2>@Model.Price ₽</h2>
+
+                <button>Связаться с продавцом</button>
+
+                <div class="sellerInfo">
+                    <div class="city">
+                        <p>Город</p>
+                        <h5>@Model.City</h5>
+                    </div>
+
+                    <hr>
+
+                    <div class="metro">
+                        <p>Метро</p>
+                        <h5>@Model.Metro</h5>
+                    </div>
+
+                    <hr>
+
+                    <div class="hideInfo">
+                        <div class="phone">
+                            <p>Телефон</p>
+                            <h5>@Model.User.PhoneNumber</h5>
+                        </div>
+
+                        <hr>
+
+                        <div class="email">
+                            <p>Email</p>
+                            <h5>@Model.User.Email</h5>
+                        </div>
+
+                        <hr>
+
+                        <div class="skype">
+                            <p>Skype</p>
+                            <h5>@Model.User.Skype</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="detailBottomDescription">
+            <div class="menu">
+                <p>Описание</p>
+                <p>Доставка</p>
+                <p>Оплата</p>
+                <p>Возврат</p>
+            </div>
+
+            <hr>
+
+            <div class="folder"></div>
+
+            <div class="folderData">
+                <div class="description">
+                    <p>@Model.Description</p>
+                </div>
+
+                <div class="delivery">
+                    <p>Word. Notebooks are designed to help organize your life while looking good in the process. Each pocket notebook features 48 pages of lined paper with the unique Word. bullet point system. Designed and made in the USA, Word. Notebooks are available in a variety of colors and styles. Information about delivery</p>
+                </div>
+
+                <div class="payment">
+                    <p>Word. Notebooks are designed to help organize your life while looking good in the process. Each pocket notebook features 48 pages of lined paper with the unique Word. bullet point system. Designed and made in the USA, Word. Notebooks are available in a variety of colors and styles. Information about payment</p>
+                </div>
+
+                <div class="cashback">
+                    <p>Word. Notebooks are designed to help organize your life while looking good in the process. Each pocket notebook features 48 pages of lined paper with the unique Word. bullet point system. Designed and made in the USA, Word. Notebooks are available in a variety of colors and styles. Information about cashback</p>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/scriptDetail.js"></script>
 </body>
 </html>
