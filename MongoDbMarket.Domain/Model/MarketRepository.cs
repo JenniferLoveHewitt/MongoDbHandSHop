@@ -29,6 +29,7 @@ namespace MongoDbMarket.Domain
             ItemCollection = Database.GetCollection<Item>("Item");
         }
 
+        private Boolean disposed = false;
         private String _imageId;
 
         public String ImageId
@@ -142,6 +143,11 @@ namespace MongoDbMarket.Domain
             var sItem = await ItemCollection.Find(Builders<Item>.Filter.Eq("ItemId", Id)).FirstOrDefaultAsync();
 
             return sItem.Photos;
+        }
+
+        public async Task<IEnumerable<Item>> GetItemByUserId(string Id)
+        {
+            return await ItemCollection.Find(Builders<Item>.Filter.Eq("User.Id", Id)).ToListAsync();
         }
     }
 }

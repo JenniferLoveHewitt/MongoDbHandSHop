@@ -1,0 +1,62 @@
+﻿@model MongoDbMarket.Domain.Identity.ApplicationUser
+
+@{
+    ViewBag.Title = "User";
+    Layout = "~/Views/StandartPage.cshtml";
+}
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>@Model.Name</title>
+    <link rel="stylesheet" href="~/Content/userDetailStyle.css?v=@DateTime.Now.Millisecond">
+</head>
+
+<body link="black" vlink="black" alink="black">
+    <style>
+        body {
+            min-width: 800px;
+        }
+    </style>
+
+    <div class="mainBlockUserDetail">
+        <div class="userInformation">
+            <div class="nameAndPicture">
+                <p>@Model.Email</p>
+                <img src="~/Image/userPicture.jpg" width="80px" height="80px">
+            </div>
+
+            <div class="otherInformation">
+                <p>На сайта c 2017 г.</p>
+
+                <div class="support">
+                    <p>Подтвержден</p>
+                    <img src="~/Image/support/phone.png" width="20px" height="20px" title="Телефон подтвержден">
+                    <img src="~/Image/support/email.png" width="20px" height="20px" title="email подтвержден">
+                </div>
+            </div>
+            <hr />
+        </div>
+
+        @foreach (var item in ViewBag.Items as List<MongoDbMarket.Domain.Item>)
+        {
+            <a href='@Url.Action("Detail", "Home", new { Id = item.ItemId })'>
+                <div class="item">
+                    <img src="~/Image/items/item1.jpg" width="200" height="180">
+
+                    <div class="discription">
+                        <h2>@item.Title</h2>
+
+                        <h4>@item.Description</h4>
+
+                        <h3>@item.Price ₽</h3>
+                    </div>
+                </div>
+            </a>
+        }
+    </div>
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/userDetailScript.js"></script>
+</body>
+</html>
+

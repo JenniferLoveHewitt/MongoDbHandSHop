@@ -11,7 +11,6 @@ c:\users\finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket
 c:\users\finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Domain\obj\Debug\MongoDbMarket.Domain.pdb
 C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Domain\bin\Debug\MongoDB.Driver.GridFS.dll
 C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Domain\bin\Debug\MongoDB.Driver.GridFS.xml
-C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Domain\obj\Debug\MongoDbMarket.Domain.csprojResolveAssemblyReference.cache
 C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Domain\bin\Debug\AspNet.Identity.MongoDB.dll
 C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.dll
 C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Domain\bin\Debug\Microsoft.AspNet.Identity.Core.xml
@@ -31,3 +30,4 @@ C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket
 C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Domain\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Domain\bin\Debug\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Domain\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Finch\documents\visual studio 2015\Projects\MongoDbMarket\MongoDbMarket.Domain\obj\Debug\MongoDbMarket.Domain.csprojResolveAssemblyReference.cache

@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="form-style-5">
-    @Html.ValidationSummary(false)
+    @Html.ValidationSummary(true)
         <fieldset>
             <legend>
                 <span class="number">1</span> Регистрация
@@ -22,24 +22,28 @@
 
             @using (Html.BeginForm())
             {
+                @Html.ValidationMessageFor(x => x.Name)
                 @Html.EditorFor(x => x.Name, new
                 {
                     htmlAttributes =
                         new { placeholder = Html.DisplayNameFor(n => n.Name) }
                 })
 
+                @Html.ValidationMessageFor(x => x.Email)
                 @Html.EditorFor(x => x.Email, new
                 {
                     htmlAttributes =
                         new { placeholder = Html.DisplayNameFor(n => n.Email) }
                 })
 
+                @Html.ValidationMessageFor(x => x.Password)
                 @Html.EditorFor(x => x.Password, new
                 {
                     htmlAttributes =
                         new { placeholder = Html.DisplayNameFor(n => n.Password) }
                 })
 
+                @Html.ValidationMessageFor(x => x.ConfirmPassword)
                 @Html.EditorFor(x => x.ConfirmPassword, new
                 {
                     htmlAttributes =
@@ -50,18 +54,21 @@
                     <span class="number">2</span>Дополнительная информация
                 </legend>
 
+                @Html.ValidationMessageFor(x => x.Country)
                 @Html.EditorFor(x => x.Country, new
                 {
                     htmlAttributes =
                         new { placeholder = Html.DisplayNameFor(n => n.Country) }
                 })
 
+                @Html.ValidationMessageFor(x => x.PhoneNumber)
                 @Html.EditorFor(x => x.PhoneNumber, new
                 {
                     htmlAttributes =
                         new { placeholder = Html.DisplayNameFor(n => n.PhoneNumber) }
                 })
 
+                @Html.ValidationMessageFor(x => x.Skype)
                 @Html.EditorFor(x => x.Skype, new
                 {
                     htmlAttributes =

@@ -32,18 +32,6 @@ namespace MongoDbMarket.WebUI.Controllers
             }
         }
 
-        public async Task<ActionResult> Indexxx(String Id, List<String> ImagesId)
-        {
-            if (Id == null || Id == String.Empty)
-                return HttpNotFound();
-
-            ImagesId = await repository.GetImagesId(Id);
-
-            var images = await repository.GetImages(ImagesId);
-
-            return View(images);
-        }
-
         //
         //Home/index
         public async Task<ActionResult> Index(ItemFilter filter)
@@ -58,7 +46,7 @@ namespace MongoDbMarket.WebUI.Controllers
         //Home/Detail
         public async Task<ActionResult> Detail(String Id)
         {
-            if (Id == String.Empty)
+            if (Id == String.Empty || Id == null || Id.Length != 24)
                 return HttpNotFound();
 
             var model = await repository.GetItem(Id);
@@ -107,7 +95,7 @@ namespace MongoDbMarket.WebUI.Controllers
         [HttpGet]
         public async Task<ActionResult> Edit(String Id)
         {
-            if (Id == null || Id == String.Empty)
+            if (Id == null || Id == String.Empty || Id.Length != 24)
                 return HttpNotFound();
 
             return View(await repository.GetItem(Id));
@@ -127,6 +115,9 @@ namespace MongoDbMarket.WebUI.Controllers
         // GET: /Home/Delete
         public async Task<ActionResult> Delete(String Id)
         {
+            if (Id == null || Id == String.Empty || Id.Length != 24)
+                return HttpNotFound();
+
             await repository.RemoveItem(Id);
             return RedirectToAction("Index");
         }
@@ -143,9 +134,29 @@ namespace MongoDbMarket.WebUI.Controllers
 
         //
         //Home/UserDetail
-        public ActionResult UserDetail()
+        public async Task<ActionResult> UserDetail(String Id)
         {
-            return View();
+            if (Id == null || Id == String.Empty || Id.Length != 24)
+                return HttpNotFound();
+
+            var sUser = await IdentityContext.Users.Find(Builders<ApplicationUser>.
+                Filter.Eq("Id", Id)).FirstAsync();
+
+            ViewBag.Items = await repository.GetItemByUserId(Id);
+
+            return View(sUser);
+        }
+
+        private async Task<ActionResult> Indexxx(String Id, List<String> ImagesId)
+        {
+            if (Id == null || Id == String.Empty)
+                return HttpNotFound();
+
+            ImagesId = await repository.GetImagesId(Id);
+
+            var images = await repository.GetImages(ImagesId);
+
+            return View(images);
         }
     }
 }

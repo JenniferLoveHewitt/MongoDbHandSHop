@@ -220,6 +220,7 @@
     <Content Include="Content\style1.css" />
     <Content Include="Content\style2.css" />
     <Content Include="Content\styleDetail.css" />
+    <Content Include="Content\userDetailStyle.css" />
     <Content Include="Global.asax" />
     <Content Include="Image\bcg2.jpg" />
     <Content Include="Image\iconmonstr-plus-4-240.png" />
@@ -236,10 +237,14 @@
     <Content Include="Image\social\iconmonstr-instagram-5-240.png" />
     <Content Include="Image\social\iconmonstr-twitter-5-240.png" />
     <Content Include="Image\social\iconmonstr-vk-5-240.png" />
+    <Content Include="Image\support\email.png" />
+    <Content Include="Image\support\phone.png" />
+    <Content Include="Image\userPicture.jpg" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\listScript.js" />
     <Content Include="Scripts\scriptDetail.js" />
     <Content Include="Scripts\uploadScript.js" />
+    <Content Include="Scripts\userDetailScript.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -273,6 +278,7 @@
     <Content Include="Views\StandartPage.cshtml" />
     <Content Include="Views\Home\Indexxx.cshtml" />
     <Content Include="Views\Home\List.cshtml" />
+    <Content Include="Views\Home\UserDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

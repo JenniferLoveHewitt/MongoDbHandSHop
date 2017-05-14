@@ -1,15 +1,17 @@
 $(function(){
 	$("body").on("click", "img", function(){
-		var src = $(this).attr("src");
-		$(".detailGalleryUpper img").attr("src", src); 
-	});	
+	    var src = $(this).attr("src");
+
+	    if(src != "/Image/userPicture.jpg")
+		    $(".detailGalleryUpper img").attr("src", src);
+	});
 	
 	$(".detailBottomDescription .folderData").hide();
 	
 	var descHtml = $(".detailBottomDescription .folderData .description").html();
 	$(".detailBottomDescription .folder").empty().append(descHtml);
 	
-	$(".detailBottomDescription .menu p").add(":button").mouseover(function(){
+	$(".detailBottomDescription .menu p").add(":button").add("img").mouseover(function(){
 		$(this).css({"cursor": "pointer"});
 	});
 	
@@ -33,5 +35,11 @@ $(function(){
 		var cashbackHtml = $(".detailBottomDescription .folderData .cashback").html();
 		
 		$(".detailBottomDescription .folder").empty().append(cashbackHtml);
+	});
+
+	$(".sellerInfo").hide();
+
+	$(":button").click(function () {
+	    $(".sellerInfo").toggle();
 	});
 });

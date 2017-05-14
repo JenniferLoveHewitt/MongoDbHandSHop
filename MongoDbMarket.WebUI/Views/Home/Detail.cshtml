@@ -35,6 +35,12 @@
             </div>
 
             <div class="detailDescription">
+                <div class="sellerPicture">
+                    <a href='@Url.Action("UserDetail", "Home", new { Id = Model.User.Id })'>
+                        <img src="~/Image/userPicture.jpg" width="100px" height="100px">
+                    </a>
+                </div>
+
                 <h1>@Model.Title</h1>
                 <h4>@Model.Category</h4>
                 <h2>@Model.Price ₽</h2>

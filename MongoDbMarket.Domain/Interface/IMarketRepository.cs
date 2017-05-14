@@ -22,5 +22,6 @@ namespace MongoDbMarket.Domain
         String ImageId { get; }
         Task<IEnumerable<GridFSFileInfo>> GetImages(IEnumerable<String> fileId);
         Task<List<String>> GetImagesId(String Id);
+        Task<IEnumerable<Item>> GetItemByUserId(String Id);
     }
 }

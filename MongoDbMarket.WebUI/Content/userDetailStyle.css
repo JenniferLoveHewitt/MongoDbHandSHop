@@ -1,0 +1,95 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.mainBlockUserDetail {
+    padding-bottom: 1500px;
+}
+
+.mainBlockUserDetail {
+    padding-bottom: 1500px;
+}
+
+.userInformation{
+	width: 60%;
+	float: left;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+.userInformation .nameAndPicture{
+	width: 100%;
+	float: left;
+}
+
+.userInformation .nameAndPicture p{
+	width: 70%;
+	float: left;
+	font-size: 25px;
+	margin-top: 35px;
+	margin-left: 35px;
+}
+
+.userInformation .nameAndPicture img{
+	margin-top: 20px;
+}
+
+.userInformation .otherInformation {
+	width: 100%;
+	float: left;
+}
+
+.userInformation .otherInformation p{
+	margin-left: 35px;
+	margin-bottom: 10px;
+}
+
+.userInformation .support{
+	width: 100%;
+	float: left;
+}
+
+.userInformation .support p{
+	float: left;
+}
+
+.userInformation .support img{
+	margin-left: 5px;
+}
+
+.item{
+	float: left;
+	width: 60%;
+	
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	height: 200px;
+}
+
+.item img{
+	float: left;
+	margin-top: 10px;
+	margin-left: 15px;
+}
+
+.item .discription{
+	float: left;
+	width: 60%;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+
+.item .discription h2{
+	margin-bottom: 30px;
+}
+
+.item .discription h4{
+	margin-bottom: 40px;
+}
+
+.item .discription h3{
+	float: right;
+}
