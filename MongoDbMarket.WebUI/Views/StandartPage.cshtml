@@ -15,7 +15,10 @@
         <header>
             <nav role='navigation'>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li class="firstLi">
+                        <img src="~/Image/logo.jpg" width="65px" height="65px" />
+                    </li>
+                    <li>@Html.ActionLink("Home", "List")</li>
                     <li>
                         <a href="#">Category1</a>
                         <ul>
@@ -53,7 +56,7 @@
                     }
                     else
                     {
-                        <li><a href="#">Log In</a></li>
+                        <li>@Html.ActionLink("Log In", "LogIn", "Auth")</li>
                     }
                 </ul>
             </nav>
@@ -125,7 +128,7 @@
             </div>
 
             <div class="companyName">
-                <p>©HANDSHOP GROUP, 2017</p>
+                <p>©HANDSHOP, 2017</p>
             </div>
         </footer>
     </div>

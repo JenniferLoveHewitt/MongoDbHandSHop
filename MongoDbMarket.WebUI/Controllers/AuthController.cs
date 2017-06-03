@@ -78,7 +78,7 @@ namespace MongoDbMarket.WebUI.Controllers
             if (result.Succeeded)
             {
                 await SignIn(user);
-                return RedirectToAction("index", "home");
+                return RedirectToAction("list", "home");
             }
 
             foreach (var error in result.Errors)
@@ -129,13 +129,13 @@ namespace MongoDbMarket.WebUI.Controllers
         public ActionResult LogOut()
         {
             GetAuthenticationManager().SignOut("ApplicationCookie");
-            return RedirectToAction("index", "home");
+            return RedirectToAction("list", "home");
         }
 
         private String GetRedirectUrl(String returnUrl)
         {
             if (String.IsNullOrEmpty(returnUrl) || !Url.IsLocalUrl(returnUrl))
-                return Url.Action("index", "home");            
+                return Url.Action("list", "home");            
 
             return returnUrl;
         }

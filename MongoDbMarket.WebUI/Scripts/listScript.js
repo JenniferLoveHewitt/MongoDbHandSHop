@@ -12,7 +12,7 @@ $(function(){
     filter("h2").css({"font-size": "23px"}).end().
     filter("h3").css({"font-size": "20px"});
     
-    $(".itemBlock").hover(function(){
+    $(".itemBlock").hover(function () {
         $(this).css("background", "rgba(0,0,0,.07)");
     }, function() {
         $(this).css("background", "rgba(0,0,0,0)");

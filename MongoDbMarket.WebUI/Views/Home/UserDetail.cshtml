@@ -38,11 +38,17 @@
             <hr />
         </div>
 
+        @{
+            int count = 1;
+        }
+
         @foreach (var item in ViewBag.Items as List<MongoDbMarket.Domain.Item>)
         {
+            string work = "/Image/items/work" + $"{count}.jpg";
+
             <a href='@Url.Action("Detail", "Home", new { Id = item.ItemId })'>
                 <div class="item">
-                    <img src="~/Image/items/item1.jpg" width="200" height="180">
+                    <img src="@work" width="200" height="180">
 
                     <div class="discription">
                         <h2>@item.Title</h2>
@@ -53,6 +59,12 @@
                     </div>
                 </div>
             </a>
+
+            count++;
+            if (count == 10)
+            {
+                count = 1;
+            }
         }
     </div>
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>

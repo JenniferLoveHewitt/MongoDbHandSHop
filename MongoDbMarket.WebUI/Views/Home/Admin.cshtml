@@ -22,7 +22,7 @@
         @Html.ActionLink("Добавить запись", "Add")
         <br /><br />
 
-        @using (Html.BeginForm("Index", "Home"))
+        @using (Html.BeginForm("Admin", "Home"))
         {
             @Html.LabelFor(x => x.Filter.Title)
             <br />
@@ -56,7 +56,6 @@
                         @Html.ActionLink("Детали", "Detail", new { id = item.ItemId }) | 
                         @Html.ActionLink("Удалить", "Delete", new { id = item.ItemId }) | 
                         @Html.ActionLink("Изменить", "Edit", new { id = item.ItemId }) |
-                        @Html.ActionLink("Картинки", "Indexxx", new { id = item.ItemId })
                     </th>
                 </tr>
             }

@@ -55,7 +55,7 @@ namespace MongoDbMarket.Tests
         [TestMethod]
         public async Task TestIndexWithNullParameter()
         {
-            var result = await controller.Index(new ItemFilter()) as ViewResult;
+            var result = await controller.Admin(new ItemFilter()) as ViewResult;
 
             Assert.IsNotNull(result);
         }
@@ -64,7 +64,7 @@ namespace MongoDbMarket.Tests
         public async Task TestIndexWithNotNullParameter()
         {
             var filter = new ItemFilter(){ Title = "abcabc" };
-            var result = await controller.Index(filter) as ViewResult;
+            var result = await controller.Admin(filter) as ViewResult;
 
             Assert.IsNotNull(result);
         }

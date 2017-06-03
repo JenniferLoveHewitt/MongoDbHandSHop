@@ -75,19 +75,30 @@
             </ul>
         </div>
 
+        @{ 
+            int count = 1;
+        }
+
         <div class="centerBlock">
             @foreach (var item in Model.Items)
             {
+                string work = "/Image/items/work" + $"{count}.jpg";
 
                 <div class="itemBlock">
                     <a href="@Url.Action("Detail", new { id = item.ItemId})">
-                        <img src="/Image/items/item7.jpg" width="230px" height="250px" />
+                        <img src='@work' width="230px" height="250px" />
 
                         <h2>@item.Title</h2>
                         <p>@item.Description</p>
                         <h3>@item.Price</h3>
                     </a>
                 </div>
+
+                count++;
+                if (count == 10)
+                {
+                    count = 1;
+                }
             }
         </div>
 
@@ -97,7 +108,7 @@
 
     </div>
     <script src="~/Scripts/jquery-3.1.1.min.js"></script>
-    <script src="~/Scripts/listScript.js"></script>
+    <script src="~/Scripts/listScript.js?v=@DateTime.Now.Millisecond"></script>
 </body>
 </html>
 

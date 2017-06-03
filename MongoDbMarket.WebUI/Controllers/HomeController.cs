@@ -34,7 +34,7 @@ namespace MongoDbMarket.WebUI.Controllers
 
         //
         //Home/index
-        public async Task<ActionResult> Index(ItemFilter filter)
+        public async Task<ActionResult> Admin(ItemFilter filter)
         {
             if(filter != null)
                 return View(await repository.GetItemRepository(filter));
@@ -87,7 +87,7 @@ namespace MongoDbMarket.WebUI.Controllers
             item.Photos = ImageIdList;
 
             await repository.AddItem(item);
-            return RedirectToAction("Index");
+            return RedirectToAction("List");
         }
 
         //
@@ -107,7 +107,7 @@ namespace MongoDbMarket.WebUI.Controllers
         public async Task<ActionResult> Edit(Item item)
         {
             await repository.EditItem(item);
-            return RedirectToAction("Index");
+            return RedirectToAction("List");
         }
 
         //добавить POST!!
@@ -119,7 +119,7 @@ namespace MongoDbMarket.WebUI.Controllers
                 return HttpNotFound();
 
             await repository.RemoveItem(Id);
-            return RedirectToAction("Index");
+            return RedirectToAction("List");
         }
 
         //

@@ -2,7 +2,7 @@ $(function(){
 	$("body").on("click", "img", function(){
 	    var src = $(this).attr("src");
 
-	    if(src != "/Image/userPicture.jpg")
+	    if (src != "/Image/userPicture.jpg" && src != "/Image/logo.jpg")
 		    $(".detailGalleryUpper img").attr("src", src);
 	});
 	
